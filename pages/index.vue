@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="main-wrapper">
     <search-form @search="search" @loading="isLoading" />
-    <div>
+    <div class="main-content">
       <games-list :games="data.data" />
       <div v-if="loading">Loading...</div>
     </div>
@@ -47,4 +47,19 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main-wrapper {
+    min-height: 100vh;
+    padding: 32px;
+    background: linear-gradient(90deg, #002F23 0%, #004736 19.54%, #004736 80.38%, #002F23 100%, #002F23 100%);
+}
+
+.main-content {
+    margin-top: 50px;
+}
+</style>
